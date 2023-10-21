@@ -1,0 +1,162 @@
+/* Reset */
+body {
+  margin: unset;
+  padding: unset;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: unset;
+  font-size: unset;
+  font-weight: unset;
+}
+
+button {
+  margin: unset;
+  padding: unset;
+  border: unset;
+}
+
+/* Typography */
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.67;
+}
+
+/* Contents */
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Gugi", cursive;
+}
+.app-container {
+  max-width: 60%;
+  margin: auto;
+  flex-grow: 1;
+}
+
+.app-header {
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+.app-main {
+  height: calc(100vh - 400px);
+  font-size: 3rem;
+  margin-top: 10px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template: repeat(7, auto) / repeat(4, 1fr);
+  grid-template-areas:
+    "result result result result"
+    "result result result result"
+    "delete clear division multiply"
+    "seven eight nine minus"
+    "four five six add"
+    "one two three equal"
+    "zero zero dot equal";
+}
+.div-result {
+  grid-area: result;
+}
+.button.one {
+  grid-area: one;
+}
+.button.two {
+  grid-area: two;
+}
+.button.three {
+  grid-area: three;
+}
+.button.four {
+  grid-area: four;
+}
+.button.five {
+  grid-area: five;
+}
+.button.six {
+  grid-area: six;
+}
+.button.seven {
+  grid-area: seven;
+}
+.button.eight {
+  grid-area: eight;
+}
+.button.nine {
+  grid-area: nine;
+}
+.button.zero {
+  grid-area: zero;
+}
+.operator.add {
+  grid-area: add;
+}
+.operator.minus {
+  grid-area: minus;
+}
+.operator.division {
+  grid-area: division;
+}
+.operator.multiply {
+  grid-area: multiply;
+}
+.operator.equal {
+  grid-area: equal;
+}
+.operator.dot {
+  grid-area: dot;
+}
+.operator.clear {
+  grid-area: clear;
+}
+.operator.delete {
+  grid-area: delete;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.app-main > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in;
+}
+.app-main > button > span {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.app-main > div:first-child {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-main > button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.div-result {
+  display: block;
+  text-align: right;
+  padding: 0 20px;
+  font-size: 4rem;
+  word-break: break-all;
+  border-radius: 10px;
+}
+.div-result p {
+  width: 100%;
+}
