@@ -1,12 +1,169 @@
 /*Reset*/
-body {
+body,
+div {
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+span {
+  margin: 0;
+}
+li {
+  list-style-type: none;
+}
+
+a {
+  font-size: unset;
+  text-decoration: unset;
+  color: unset;
 }
 
 /*Typography*/
 :root {
   --font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
+  --main-bg-color: 0, 0, 0;
+  --font-color: 255, 255, 255;
+  --menu-hover-color: 255, 255, 255, 0.1;
 }
 
 /*Contents*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  background-color: rgb(var(--main-bg-color));
+  color: rgb(var(--font-color));
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+}
+
+/*.container .menu-wrapper,
+.container .main-wrapper {
+  box-shadow: inset 0 0 10px white;
+}*/
+
+/*menu section start*/
+.container .menu-wrapper {
+  height: 100vh;
+  max-width: 22.9rem;
+  width: 100%;
+  padding: 1.2rem 0 0 1.5rem;
+  box-sizing: border-box;
+}
+
+.menu-logo__wrapper {
+  width: 20rem;
+  height: 10rem;
+}
+
+.menu-wrapper .menu-logo {
+  height: inherit;
+  width: inherit;
+  background-color: rgb(var(--font-color));
+  -webkit-mask: url("../icons/logo.svg") no-repeat;
+  mask: url("../icons/logo.svg") no-repeat;
+  margin-left: 1rem;
+}
+
+.menu-icon {
+  width: 2.5rem;
+  height: 2.7rem;
+  background-color: rgb(var(--font-color));
+}
+
+.menu-icon.home {
+  -webkit-mask: url("../icons/home.svg") no-repeat center;
+  mask: url("../icons/home.svg") no-repeat center;
+}
+
+.menu-icon.search {
+  -webkit-mask: url("../icons/search.svg") no-repeat center;
+  mask: url("../icons/search.svg") no-repeat center;
+}
+
+.menu-icon.explore {
+  -webkit-mask: url("../icons/explore.svg") no-repeat center;
+  mask: url("../icons/explore.svg") no-repeat center;
+}
+
+.menu-icon.reels {
+  -webkit-mask: url("../icons/reels.svg") no-repeat center;
+  mask: url("../icons/reels.svg") no-repeat center;
+}
+
+.menu-icon.messages {
+  -webkit-mask: url("../icons/message.svg") no-repeat center;
+  mask: url("../icons/message.svg") no-repeat center;
+}
+
+.menu-icon.notifications {
+  -webkit-mask: url("../icons/heart.svg") no-repeat center;
+  mask: url("../icons/heart.svg") no-repeat center;
+}
+
+.menu-icon.create {
+  -webkit-mask: url("../icons/add.svg") no-repeat center;
+  mask: url("../icons/add.svg") no-repeat center;
+}
+
+.menu-list > li:last-child > .menu-icon {
+  border-radius: 10rem;
+  overflow: hidden;
+  background-color: unset;
+}
+.menu-list > li {
+  width: 23rem;
+  height: 5rem;
+  display: flex;
+  padding-left: 1.2rem;
+  box-sizing: border-box;
+}
+.menu-list > li:hover {
+  background-color: rgba(var(--menu-hover-color));
+  border-radius: 0.5rem;
+}
+
+.menu-list > li > div {
+  margin: auto 0;
+}
+.menu-list > li:hover > div:first-child {
+  scale: 110%;
+}
+.menu-list > li > div:last-child {
+  height: 100%;
+  margin-left: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+.menu-list > li > div:last-child > div {
+  height: 1.3rem;
+}
+.menu-list > li > div:last-child > div > span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+.menu-icon .profile {
+  background-image: url("../icons/profile.jpeg");
+  background-size: cover;
+  width: inherit;
+  height: inherit;
+}
+
+/*menu section end*/
+/*main section start*/
+.container .main-wrapper {
+  width: 100%;
+}
+
+/*main section end*/
