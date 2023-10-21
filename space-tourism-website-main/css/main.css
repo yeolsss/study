@@ -1,0 +1,59 @@
+@import url('./base.css');
+@import url('./header.css');
+/*Contents*/
+
+/*main section*/
+.main-section {
+  background-image: url('../assets/home/background-home-desktop.jpg');
+}
+
+/* main contents*/
+.main-contents {
+  display: flex;
+  height: inherit;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 16.5rem 13.1rem;
+}
+.main-contents__text {
+  max-width: 45rem;
+}
+.main-contents__text > h1 {
+  margin: 2.4rem 0;
+}
+
+.main-contents__circle-container {
+  position: relative;
+  margin: 11.9rem 13.3rem;
+}
+.main-contents__circle {
+  color: var(--main-color) !important;
+  background-color: var(--main-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 27.4rem;
+  z-index: 1;
+  position: absolute;
+}
+.main-contents__circle > a {
+  padding: 11.9rem 6.3rem;
+}
+.main-contents__circle h4 {
+  letter-spacing: 0.2rem;
+}
+.main-contents__circle,
+.main-contents__circle-hidden {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-contents__circle-hidden {
+  position: absolute;
+  background-color: white;
+  width: 45rem;
+  height: 45rem;
+  border-radius: 45rem;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.5s ease-in;
+}

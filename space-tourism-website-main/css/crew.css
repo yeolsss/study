@@ -1,0 +1,83 @@
+@import url('./base.css');
+@import url('./header.css');
+@import url('./sub-page-layout.css');
+
+/*contents*/
+.main-section {
+  background-image: url('../assets/crew/background-crew-desktop.jpg');
+}
+
+.sub-page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7.6rem;
+  height: 100%;
+}
+
+.sub-page__info-container {
+  margin-left: 16.673rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sub-page__info-nav-container {
+  flex-grow: 1;
+  padding-top: 15.4rem;
+}
+
+.sub-page__info-container > div:first-child {
+}
+
+.sub-page__info-nav-container h4 {
+  margin-bottom: 1.5rem;
+  opacity: 0.5042;
+}
+.sub-page__info-nav-container .crew-name {
+  margin-bottom: 2.7rem;
+}
+.sub-page__info-nav-container .crew-name {
+  width: 100%;
+}
+.sub-page__info-nav-container .body-text {
+  max-width: 44.4rem;
+}
+.sub-page__img-container {
+  position: relative;
+}
+.sub-page__img-container img {
+  margin-right: 13.7rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.crew-nav__dot {
+  display: flex;
+  max-width: 13.2rem;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 9.4rem;
+}
+.crew-nav__dot > div {
+  transition: opacity 0.3s ease-in;
+}
+.crew-nav__dot > div > a {
+  display: block;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+}
+
+.current-dot {
+  opacity: 1 !important;
+  transition: opacity 0.3s ease-in;
+}
+
+.hover-dot {
+  opacity: 0.5001 !important;
+  transition: opacity 0.3s ease-in;
+}
+.crew-nav__dot > div {
+  opacity: 0.174363;
+}
