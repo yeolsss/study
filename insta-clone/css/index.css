@@ -28,6 +28,12 @@ a {
   --main-bg-color: 0, 0, 0;
   --font-color: 255, 255, 255;
   --menu-hover-color: 255, 255, 255, 0.1;
+  --menu-border-color: 38, 38, 38;
+
+  /*size*/
+  --menu-width: 24.5rem;
+  --profile-img-width: 5.6rem;
+  --profile-img-height: 5.6rem;
 }
 
 /*Contents*/
@@ -46,23 +52,22 @@ body {
   width: 100vw;
 }
 
-/*.container .menu-wrapper,
-.container .main-wrapper {
-  box-shadow: inset 0 0 10px white;
-}*/
-
 /*menu section start*/
 .container .menu-wrapper {
   height: 100vh;
-  max-width: 22.9rem;
+  max-width: var(--menu-width);
   width: 100%;
-  padding: 1.2rem 0 0 1.5rem;
+  padding: 4rem 1.5rem 0;
   box-sizing: border-box;
+  border: 0.1rem solid rgb(var(--menu-border-color));
+  display: flex;
+  flex-direction: column;
+  position: fixed;
 }
 
 .menu-logo__wrapper {
   width: 20rem;
-  height: 10rem;
+  height: 7rem;
 }
 
 .menu-wrapper .menu-logo {
@@ -115,14 +120,27 @@ body {
   mask: url("../icons/add.svg") no-repeat center;
 }
 
-.menu-list > li:last-child > .menu-icon {
+.menu-icon.threads {
+  -webkit-mask: url("../icons/at.svg") no-repeat center;
+  mask: url("../icons/at.svg") no-repeat center;
+}
+
+.menu-icon.more {
+  -webkit-mask: url("../icons/menu.svg") no-repeat center;
+  mask: url("../icons/menu.svg") no-repeat center;
+}
+.menu-contents__wrapper {
+  flex-grow: 1;
+}
+
+.menu-contents__wrapper .menu-list > li:last-child > .menu-icon {
   border-radius: 10rem;
   overflow: hidden;
   background-color: unset;
 }
 .menu-list > li {
-  width: 23rem;
-  height: 5rem;
+  width: 100%;
+  height: 5.5rem;
   display: flex;
   padding-left: 1.2rem;
   box-sizing: border-box;
@@ -154,16 +172,52 @@ body {
   line-height: 2rem;
 }
 .menu-icon .profile {
-  background-image: url("../icons/profile.jpeg");
+  background-image: url("../images/profile.jpeg");
   background-size: cover;
   width: inherit;
   height: inherit;
 }
 
+.menu-footer {
+}
+.menu-footer ul li {
+  width: inherit;
+}
+
 /*menu section end*/
 /*main section start*/
 .container .main-wrapper {
+  margin-left: calc(100% - var(--menu-border-color));
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main-wrapper .main-contents {
+  max-width: 63rem;
+  width: 100%;
+  box-shadow: inset 0 0 20px red;
+  display: flex;
+  flex-direction: column;
+  height: 1000vh;
+}
+
+.main-wrapper .main-contents .main-contents__profile-cards {
+  overflow: scroll;
+}
+.main-contents__profile-cards .main-contents__profile-card {
+}
+.main-contents__profile-card .main-contents__profile-card__img {
+  background-image: url("../images/minseock.jpg");
+  background-size: cover;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  border: 0.1rem solid;
+}
+.main-contents__profile-card .main-contents__profile-card__img::after {
+  content: "";
+  width: var(--profile-img-width);
+  height: var(--profile-img-height);
 }
 
 /*main section end*/
