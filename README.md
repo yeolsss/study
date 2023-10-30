@@ -1,4 +1,4 @@
-# 토이프로젝트 Rpository
+# Study Rpository
 
 ---
 1. [board-firebase](https://github.com/yeolsss/study/tree/main/board-firebase)
