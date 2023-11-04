@@ -146,7 +146,7 @@ const Input = ({ ...props }: IInputProps) => {
       onChange={props.handler}
       ref={props.refData}
       placeholder={props.placeholder}
-      $isError={props.isError !== null}
+      $isError={props.isError}
     />
   );
 };

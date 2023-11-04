@@ -1,22 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "@reduxjs/toolkit/query";
+import { RootState } from "../store";
 
 export interface IToDo {
   id: number;
+  title: string;
   toDo: string;
-  content: string;
   isDone: boolean;
 }
 
-class ToDo implements IToDo {
+class ToDo {
   id: number;
+  title: string;
   toDo: string;
-  content: string;
   isDone: boolean;
+
   constructor(title: string, content: string) {
     this.id = Date.now();
-    this.toDo = title;
-    this.content = content;
+    this.title = title;
+    this.toDo = content;
     this.isDone = false;
   }
 }
@@ -35,13 +36,27 @@ const toDoSlice = createSlice({
       localStorage.setItem(TO_DO_KEY, JSON.stringify(newToDos));
       return newToDos;
     },
-    toDoRemoved: (state, action) => {},
-    isDoneToggled: (state, action) => {},
+    isDoneToggled: (state, action) => {
+      const newTodos = state.map((toDo: IToDo) => {
+        if (toDo.id === parseInt(action.payload.id)) {
+          console.log(!toDo.isDone);
+          toDo.isDone = !toDo.isDone;
+        }
+        return toDo;
+      });
+      localStorage.setItem(TO_DO_KEY, JSON.stringify(newTodos));
+    },
+    toDoRemoved: (state, action) => {
+      const newTodos = state.filter(
+        (toDo: IToDo) => toDo.id !== parseInt(action.payload.id),
+      );
+      localStorage.setItem(TO_DO_KEY, JSON.stringify(newTodos));
+    },
   },
 });
 
-export const { toDoAdded } = toDoSlice.actions;
+export const { toDoAdded, isDoneToggled, toDoRemoved } = toDoSlice.actions;
 
-export const selectToDos = (state: RootState<any, any, any>) => state.toDos;
+export const selectToDos = (state: RootState) => state.toDos;
 
 export default toDoSlice.reducer;
