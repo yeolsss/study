@@ -7,6 +7,10 @@ export interface IValidData {
   setError: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface IResetState {
+  setValues: React.Dispatch<React.SetStateAction<string>>;
+}
+
 export const validData = ({ value, msg, ref, setError }: IValidData) => {
   if (value.replaceAll(" ", "") === "") {
     alert(msg);
@@ -14,4 +18,12 @@ export const validData = ({ value, msg, ref, setError }: IValidData) => {
     setError(true);
     return true;
   }
+};
+
+export const resetState = (
+  ...setValues: React.Dispatch<React.SetStateAction<string>>[]
+) => {
+  setValues.forEach((setValue) => {
+    setValue("");
+  });
 };
