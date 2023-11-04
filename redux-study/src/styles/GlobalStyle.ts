@@ -76,9 +76,8 @@ export const GlobalStyle = createGlobalStyle`
     --box-hover-color: ${(props) => props.theme.boxHoverColor};
 
     --border-radius: 0.5rem;
-    
-
     --transition-duration: 0.2s;
+    
     --input-border-color: ${(props) => props.theme.inputBorderColor};
     --input-border-focus-color: ${(props) => props.theme.inputBorderFocusColor};
     --input-border-error-color: rgba(232, 65, 24, 0.5);

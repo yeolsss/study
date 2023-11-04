@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "@reduxjs/toolkit/query";
+import { RootState } from "../store";
 
 const TO_DO_THEME = "toDoTheme";
 
@@ -20,5 +20,5 @@ const themeSlice = createSlice({
 
 export const { toggleTheme } = themeSlice.actions;
 
-export const selectTheme = (state: RootState<any, any, any>) => state.theme;
+export const selectTheme = (state: RootState) => state.theme;
 export default themeSlice.reducer;
