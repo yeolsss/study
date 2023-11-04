@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
-import { IValidData, validData } from "../common/util";
+import { IValidData, resetState, validData } from "../common/util";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { toDoAdded } from "../reducers/ToDoReducer";
 
 // interface
 interface IInputProps {
@@ -19,8 +21,10 @@ function ToDoForm() {
   const titleRef = useRef<HTMLInputElement>(null);
   const toDoRef = useRef<HTMLInputElement>(null);
 
-  const [titleError, setTitleError] = useState(false);
-  const [toDoError, setToDoError] = useState(false);
+  const [titleError, setTitleError] = useState<boolean>(false);
+  const [toDoError, setToDoError] = useState<boolean>(false);
+
+  const dispatch = useDispatch();
 
   const handleOnChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -48,7 +52,8 @@ function ToDoForm() {
     };
     if (validData(titleObj) || validData(toDoObj)) return;
 
-    console.log(title, toDo);
+    dispatch(toDoAdded({ title, toDo }));
+    resetState(setTitle, setToDo);
   };
 
   return (

@@ -3,25 +3,25 @@ import { RootState } from "@reduxjs/toolkit/query";
 
 export interface IToDo {
   id: number;
-  title: string;
+  toDo: string;
   content: string;
   isDone: boolean;
 }
 
 class ToDo implements IToDo {
   id: number;
-  title: string;
+  toDo: string;
   content: string;
   isDone: boolean;
   constructor(title: string, content: string) {
     this.id = Date.now();
-    this.title = title;
+    this.toDo = title;
     this.content = content;
     this.isDone = false;
   }
 }
 
-const TO_DO_KEY = "toDos";
+const TO_DO_KEY = "toDoList";
 const toDoList = localStorage.getItem(TO_DO_KEY);
 const initialState = toDoList ? JSON.parse(toDoList) : [];
 
@@ -30,7 +30,7 @@ const toDoSlice = createSlice({
   initialState,
   reducers: {
     toDoAdded: (state, action) => {
-      const toDo = new ToDo(action.payload.title, action.payload.content);
+      const toDo = new ToDo(action.payload.title, action.payload.toDo);
       const newToDos = [toDo, ...state];
       localStorage.setItem(TO_DO_KEY, JSON.stringify(newToDos));
       return newToDos;
