@@ -15,7 +15,7 @@ function ToDoList() {
   );
 
   return (
-    <main>
+    <Main>
       <ToDoSection>
         <h1>🔥ToDo List🔥</h1>
         <ToDoCards>
@@ -38,9 +38,12 @@ function ToDoList() {
           </ToDoCards>
         </ToDoSection>
       )}
-    </main>
+    </Main>
   );
 }
+const Main = styled.main`
+  margin-bottom: 10rem;
+`;
 const ToDoSection = styled.section`
   margin-top: 10rem;
   font-size: 2.4rem;

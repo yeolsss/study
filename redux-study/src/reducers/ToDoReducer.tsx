@@ -8,12 +8,11 @@ export interface IToDo {
   isDone: boolean;
 }
 
-class ToDo {
+class ToDo  {
   id: number;
   title: string;
   toDo: string;
   isDone: boolean;
-
   constructor(title: string, content: string) {
     this.id = Date.now();
     this.title = title;
