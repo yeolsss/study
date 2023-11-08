@@ -80,3 +80,9 @@ fabric.properties
 **/.idea
 
 */node_module
+
+# mac os 
+.DS_Store
+
+# window os
+Thumbs.db
